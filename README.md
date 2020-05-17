@@ -4,6 +4,7 @@ Applied the following patches on top of st v0.83:
  - alpha
  - clipboard
  - scrollback + scrollback-mouse-altscreen
+ - externalpipe + externalpipe-eternal
 
 ### Todos
 
