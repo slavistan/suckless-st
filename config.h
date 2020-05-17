@@ -187,6 +187,13 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
+  // scroll
+  { XK_ANY_MOD,            XK_Page_Up,     kscrollup,      {.i = -1} },
+  { XK_ANY_MOD,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+  { MODKEY                     , XK_u        , kscrollup     , {.i = -1} }           ,
+  { MODKEY                     , XK_d        , kscrolldown   , {.i = -1} }           ,
+  { MODKEY                     , XK_k        , kscrollup     , {.i =  1} }           ,
+  { MODKEY                     , XK_j        , kscrolldown   , {.i =  1} }           ,
   // zoom
   { MODKEY|ShiftMask           , XK_plus     , zoom          , {.f = +1} }           ,
   { MODKEY                     , XK_minus    , zoom          , {.f = -1} }           ,
