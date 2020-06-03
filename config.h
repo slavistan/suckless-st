@@ -198,6 +198,10 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
      NULL };
 
 static char *copyout[] = { "/bin/sh", "-c",
+    "st-copyout.sh -c", "externalpipe",
+     NULL };
+
+static char *editout[] = { "/bin/sh", "-c",
     "st-copyout.sh", "externalpipe",
      NULL };
 
@@ -210,6 +214,7 @@ static Shortcut shortcuts[] = {
   { MODKEY                     , XK_l        , externalpipe  , { .v = copyurlcmd } } ,
   { MODKEY|ShiftMask           , XK_L        , externalpipe  , { .v = openurlcmd } } ,
   { MODKEY                     , XK_o        , externalpipe  , { .v = copyout } } ,
+  { MODKEY|ShiftMask           , XK_O        , externalpipe  , { .v = editout } } ,
   // scroll
   { XK_ANY_MOD,            XK_Page_Up,     kscrollup,      {.i = -1} },
   { XK_ANY_MOD,            XK_Page_Down,   kscrolldown,    {.i = -1} },
