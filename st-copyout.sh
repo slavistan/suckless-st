@@ -25,7 +25,10 @@ numchoices=$(printf '%s\n' "$data" | wc -l)
 
 # prompt user to choose. Decorate lines a little bit and show them in inverse order. Prepend with line number which we
 # use to match the chosen line in $data (reverse index due to `tac').
-choice=$(printf '%s\n' "$data" | tac | sed -E 's/^[[:digit:]]+:([[:digit:]]+):(.*)$/[\1 lines] \2/g' | nl -n ln -s ': ' -w 1 | dmenu -l 10 -p "Which command?")  || exit
+[ "$1" = "-c" ] \
+  && prompt="Copy output of what?" \
+  || prompt="Edit output of what?"
+choice=$(printf '%s\n' "$data" | tac | sed -E 's/^[[:digit:]]+:([[:digit:]]+):(.*)$/[\1 lines] \2/g' | nl -n ln -s ': ' -w 1 | dmenu -l 10 -p "$prompt")  || exit
 
 # reverse index to match order in $data
 ii=$(printf '%s\n' "$choice" | cut -d ':' -f 1 | xargs expr $numchoices + 1 -)
