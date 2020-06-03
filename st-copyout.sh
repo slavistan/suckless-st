@@ -37,4 +37,4 @@ last=$(echo $range | cut -d ':' -f 2 | xargs expr $first - 1 +)
 sed -n "$first,${last}p;${last}q" "$tmpfile"
 
 # TODO:
-# [ ] multiline commands
+# [ ] multiline commands - requires proper multiline prompt (preceed every line with >)
