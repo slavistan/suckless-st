@@ -197,6 +197,10 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
     "urlparse.sh -c - ", "externalpipe",
      NULL };
 
+static char *copyout[] = { "/bin/sh", "-c",
+    "st-copyout.sh", "externalpipe",
+     NULL };
+
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
@@ -204,7 +208,8 @@ static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
   // externalpipe
   { MODKEY                     , XK_l        , externalpipe  , { .v = copyurlcmd } } ,
-  { MODKEY                     , XK_o        , externalpipe  , { .v = openurlcmd } } ,
+  { MODKEY|ShiftMask           , XK_L        , externalpipe  , { .v = openurlcmd } } ,
+  { MODKEY                     , XK_o        , externalpipe  , { .v = copyout } } ,
   // scroll
   { XK_ANY_MOD,            XK_Page_Up,     kscrollup,      {.i = -1} },
   { XK_ANY_MOD,            XK_Page_Down,   kscrolldown,    {.i = -1} },
