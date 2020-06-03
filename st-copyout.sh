@@ -34,7 +34,7 @@ ii=$(printf '%s\n' "$choice" | cut -d ':' -f 1 | xargs expr $numchoices + 1 -)
 range=$(printf '%s\n' "$data" | sed -n "$ii{p;q}" | cut -d ':' -f1-2)
 first=$(echo $range | cut -d ':' -f 1)
 last=$(echo $range | cut -d ':' -f 2 | xargs expr $first - 1 +)
-sed -n "$first,${last}p;${last}q" "$tmpfile"
+sed -n "$first,${last}p;${last}q" "$tmpfile" | xclip -selection clipboard
 
 # TODO:
 # [ ] multiline commands - requires proper multiline prompt (preceed every line with >)
