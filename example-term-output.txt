@@ -1,11 +1,15 @@
 [pts/0] stan@Berenice in /tmp/freaw
-➤ 
+➤
 [pts/0] stan@Berenice in /tmp/freaw
 ➤ echo "The first\nCommand" | tac
 C
 B
 A
 asdadsa
+[pts/0] stan@Berenice in /tmp/freaw
+➤
+[pts/0] stan@Berenice in /tmp/freaw
+➤
 [pts/0] stan@Berenice in /tmp/freaw
 ➤ echo "2nd stuff\n!!" | tac
 C
@@ -29,3 +33,5 @@ tac  0.00s user 0.00s system 86% cpu 0.003 total
 sad
 [pts/0] stan@Berenice in /tmp/freaw
 ➤ man cut
+[pts/0] stan@Berenice in /tmp/freaw
+➤
