@@ -23,7 +23,7 @@ if($0 ~ ps1) {
 };}
 END {
   if(_prev) { print _prev+1":"NR-_prev":"_cmd };
-  }' "$tmpfile" | sed -E '/[[:digit:]]+:[[:digit:]]+:'"$ps1"'\s+$/d')
+  }' "$tmpfile" | sed -E '/^[[:digit:]]+:[[:digit:]]+:'"$ps1"'\s*$/d')
 numchoices=$(printf '%s\n' "$data" | wc -l)
 
 # prompt user to choose. Decorate lines a little bit and show them in inverse order. Prepend with line number which we
