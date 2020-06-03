@@ -15,4 +15,3 @@ Features:
 
 - [ ] Make pgup/pgdown respect MODE_ALTSCREEN as the mkeys do
 - [ ] Use fallback font for colored emojis (lukesmith)
-- [ ] Make urlparse.sh part of this repo
