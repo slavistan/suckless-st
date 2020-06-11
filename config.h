@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=15:antialias=true:autohint=true";
-static char *font2[] = {}; /* Fallback fonts for missing code-points */
+static char *font = "Hack:pixelsize=18:antialias=true:autohint=true";
+static char *font2[] = { "JoyPixels", "Noto Color Emoji" };
 static int borderpx = 2;
 
 /*
