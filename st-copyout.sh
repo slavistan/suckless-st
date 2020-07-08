@@ -7,10 +7,10 @@ tmpfile=$(mktemp /tmp/st-output.XXXXXX)
 tmpfile2=$(mktemp /tmp/st-output-edit.XXXXXX)
 # trap 'rm "$tmpfile" "$tmpfile2"' 0 1 15
 
-# write to file.
-# TODO: where does that trailing whitespace come from?
-#       Check implementation of externalpipe
-sed -n 's/\s$//g;w '"$tmpfile"
+# write buffer to file. Replace EOL indicator by actual newline.
+# TODO(bug): Remove trailing whitespace
+#   Check implementation of externalpipe
+sed -e 's/\s$//g' -e 's/❱❱\s\+/\n/g' > "$tmpfile"
 
 # setup data structure for all lines matching ps1. Format is
 #   <first line of output>:<lines in output>:<command which produced output>
@@ -42,7 +42,8 @@ first=$(echo $range | cut -d ':' -f 1)
 last=$(echo $range | cut -d ':' -f 2 | xargs expr $first - 1 +)
 
 if [ "$1" = "-c" ]; then
-  sed -n "$first,${last}p;${last}q" "$tmpfile" | xclip -selection clipboard
+  head -n "$last" "$tmpfile" | tail -n $(expr $last - $first + 1) |
+    xclip -r -selection clipboard
 else
   sed -n "$first,${last}p;${last}q" "$tmpfile" > "$tmpfile2"
   nohup $TERMINAL -e $EDITOR "$tmpfile2" > /dev/null 2>&1 &
