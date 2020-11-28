@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Droid Sans Mono:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = {};
+static char *font2[] = { "monospace", "Droid Sans Fallback" };
 
 // Emoji fonts requrie the libXfg-bgra patch which gets constantly overwritten
 // after applying it manually Ubuntu causing stuff to break. See you in Arch-land.
