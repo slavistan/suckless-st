@@ -5,14 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=18:antialias=true:autohint=true";
+static char *font = "Droid Sans Mono:pixelsize=18:antialias=true:autohint=true";
 static char *font2[] = {};
 
 // Emoji fonts requrie the libXfg-bgra patch which gets constantly overwritten
 // after applying it manually Ubuntu causing stuff to break. See you in Arch-land.
 // static char *font2[] = { "JoyPixels", "Noto Color Emoji" };
 /* static char *font2[] = { "JoyPixels", "Noto Color Emoji" }; */
-static int borderpx = 2;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
