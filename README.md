@@ -15,3 +15,5 @@ Features:
 
 - [ ] Make pgup/pgdown respect MODE_ALTSCREEN as the mkeys do
 - [ ] Use fallback font for colored emojis (lukesmith)
+- [ ] Redraw on resize (seems difficult)
+- [ ] Mark last shell command to being able to quickly jump to the beginnin of the output
